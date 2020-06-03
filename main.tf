@@ -215,6 +215,19 @@ resource "nsxt_policy_service" "vROPS_TCP3100" {
   }
 }
 
+// creating Services TCP 389:
+resource "nsxt_policy_service" "ldap_TCP389" {
+  description  = "ldap service provisioned by Terraform"
+  display_name = "ldap_TCP389"
+
+  l4_port_set_entry {
+    display_name      = "TCP389"
+    description       = "TCP port 389 entry"
+    protocol          = "TCP"
+    destination_ports = ["389"]
+  }
+}
+
 ###################### creating all Groups ######################
 
 // creating Group for UAG_external:
@@ -272,6 +285,19 @@ resource "nsxt_policy_group" "vROPS" {
   description  = "Created from Terraform vROPS"
   domain       = "cgw"
 }
+// creating Group for Workspace1_Connector:
+resource "nsxt_policy_group" "Workspace1_Connector" {
+  display_name = "Workspace1_Connector"
+  description  = "Created from Terraform Workspace1_Connector"
+  domain       = "cgw"
+}
+
+// creating Group for Workspace1_Access:
+resource "nsxt_policy_group" "Workspace1_Access" {
+  display_name = "Workspace1_Access"
+  description  = "Created from Terraform Workspace1_Access"
+  domain       = "cgw"
+}
 
 // creating Group for RFC_1918:
 resource "nsxt_policy_group" "RFC_1918" {
@@ -297,7 +323,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
   category     = "Environment"
 
   rule {
-    display_name       = "UAG_external_Inbound"
+    display_name       = "UAG_external_Clients_Inbound"
     source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
     sources_excluded   = true
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
@@ -314,7 +340,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
       logged             = true
     }
     rule {
-      display_name       = "UAG_external_vRealize Horizon_Inbound"
+      display_name       = "UAG_external_vRealize_Horizon_Inbound"
       source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
       destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
       action             = "ALLOW"
@@ -322,7 +348,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
       logged             = true
     }
    rule {
-      display_name       = "UAG_external_Outbound"
+      display_name       = "UAG_external_VDI_Clients_Outbound"
       source_groups      = ["${nsxt_policy_group.UAG_external.path}"]
       destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
       action             = "ALLOW"
@@ -340,7 +366,7 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
   category     = "Environment"
 
   rule {
-    display_name       = "UAG_internal_Inbound"
+    display_name       = "UAG_internal_Clients_Inbound"
     source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
     action             = "ALLOW"
@@ -356,7 +382,7 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
     logged             = true
   }
   rule {
-    display_name       = "UAG_external_vRealize Horizon_Inbound"
+    display_name       = "UAG_internal_vRealize_Horizon_Inbound"
     source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
     action             = "ALLOW"
@@ -364,7 +390,7 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
     logged             = true
   }
   rule {
-    display_name       = "UAG_internal_Outbound"
+    display_name       = "UAG_internal_VDI_Clients_Outbound"
     source_groups      = ["${nsxt_policy_group.UAG_internal.path}"]
     destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
     action             = "ALLOW"
@@ -400,19 +426,35 @@ resource "nsxt_policy_security_policy" "Horizon_Connection_Server" {
   category     = "Environment"
 
   rule {
-    display_name       = "Horizon_Connection_Server_Inbound"
-    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
-    destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
+    display_name       = "Horizon_Connection_Server_Admin_Inbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
     action             = "ALLOW"
-    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
   }
   rule {
-    display_name       = "Horizon_Connection_Server_Outbound"
-    source_groups      = ["${nsxt_policy_group.UAG_internal.path}"]
-    destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
+    display_name       = "Horizon_Connection_Server_UAG_Inbound"
+    source_groups      = ["${nsxt_policy_group.UAG_internal.path}", "${nsxt_policy_group.UAG_external.path}"]
+    destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
     action             = "ALLOW"
-    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_Connection_Server_Workspace_One_Connector_Inbound"
+    source_groups      = ["${nsxt_policy_group.Workspace1_Connector.path}"]
+    destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.ldap_TCP389.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_Connection_Server_Event_DB_Outbound"
+    source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
+    destination_groups = ["${nsxt_policy_group.Event_Database.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.EventDB_TCP1433.path}"]
     logged             = true
   }
 }
