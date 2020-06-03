@@ -288,7 +288,7 @@ resource "nsxt_policy_group" "RFC_1918" {
 
 ###################### creating CGW Security Rules ######################
 
-###################### creating Rules for Unified Access Gateway external ######################
+###################### creating Ruleset for Unified Access Gateway external ######################
 
 resource "nsxt_policy_security_policy" "UAG_external" {
   domain       = "cgw"
@@ -314,7 +314,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
     }
 }
 
-###################### creating Rules for Unified Access Gateway internal ######################
+###################### creating Ruleset for Unified Access Gateway internal ######################
 
 resource "nsxt_policy_security_policy" "UAG_internal" {
   domain       = "cgw"
@@ -340,4 +340,20 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
   }
 }
 
-###################### creating Rules for Unified Access Gateway internal ######################
+###################### creating Ruleset for Internal Connections without internal UAGs ######################
+
+resource "nsxt_policy_security_policy" "Internal_Client_Connection" {
+  domain       = "cgw"
+  display_name = "Internal_Client_Connection"
+  description  = "Terraform Internal_Client_Connection Rule"
+  category     = "Environment"
+
+  rule {
+    display_name       = "Internal_Client_Connection_Outbound"
+    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
+    destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}

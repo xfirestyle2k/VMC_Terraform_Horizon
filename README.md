@@ -5,6 +5,13 @@ Terraform.
 
 In this script I using VMC on AWS and the Terraform Provider for NSX-T.
 
+# About Rules
+
+After you applyed the Ruleset. Some Rules depending on your Environment. Following you can find some explainations.
+
+If you using internal Unified Access Gateways, you are able to delete Section: "Internal_Client_Connection"
+It is only necessary if you haven't deployed internal Unified access Gateways. 
+
 # Terraform NSX-T Provider
 The newest version from Terraform NSX-T Provider can always be found here: https://github.com/terraform-providers/terraform-provider-nsxt/
 
