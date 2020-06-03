@@ -293,16 +293,33 @@ resource "nsxt_policy_group" "RFC_1918" {
 resource "nsxt_policy_security_policy" "UAG_external" {
   domain       = "cgw"
   display_name = "UAG_external"
-  description  = "Terraform UAG_external Rule"
+  description  = "Terraform UAG_external Ruleset"
   category     = "Environment"
 
   rule {
     display_name       = "UAG_external_Inbound"
-    source_groups      = []
+    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
+    sources_excluded   = true
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
     action             = "ALLOW"
-    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
     logged             = true
+    }
+    rule {
+      display_name       = "UAG_external_ADMIN_Inbound"
+      source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+      destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
+      action             = "ALLOW"
+      services           = ["${nsxt_policy_service.Blast_TCP9443.path}"]
+      logged             = true
+    }
+    rule {
+      display_name       = "UAG_external_vRealize Horizon_Inbound"
+      source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
+      destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
+      action             = "ALLOW"
+      services           = ["${nsxt_policy_service.Blast_TCP9443.path}"]
+      logged             = true
     }
    rule {
       display_name       = "UAG_external_Outbound"
@@ -319,7 +336,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
 resource "nsxt_policy_security_policy" "UAG_internal" {
   domain       = "cgw"
   display_name = "UAG_internal"
-  description  = "Terraform UAG_internal Rule"
+  description  = "Terraform UAG_internal Ruleset"
   category     = "Environment"
 
   rule {
@@ -327,7 +344,23 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
     source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
     action             = "ALLOW"
-    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "UAG_internal_ADMIN_Inbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.UAG_internal.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP9443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "UAG_external_vRealize Horizon_Inbound"
+    source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
+    destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP9443.path}"]
     logged             = true
   }
   rule {
@@ -345,7 +378,7 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
 resource "nsxt_policy_security_policy" "Internal_Client_Connection" {
   domain       = "cgw"
   display_name = "Internal_Client_Connection"
-  description  = "Terraform Internal_Client_Connection Rule"
+  description  = "Terraform Internal_Client_Connection Ruleset"
   category     = "Environment"
 
   rule {
@@ -354,6 +387,32 @@ resource "nsxt_policy_security_policy" "Internal_Client_Connection" {
     destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}
+
+###################### creating Ruleset for Horizon Connection Server ######################
+
+resource "nsxt_policy_security_policy" "Horizon_Connection_Server" {
+  domain       = "cgw"
+  display_name = "Horizon_Connection_Server"
+  description  = "Terraform Horizon_Connection_Server Ruleset"
+  category     = "Environment"
+
+  rule {
+    display_name       = "Horizon_Connection_Server_Inbound"
+    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
+    destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_Connection_Server_Outbound"
+    source_groups      = ["${nsxt_policy_group.UAG_internal.path}"]
+    destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
     logged             = true
   }
 }
