@@ -291,69 +291,52 @@ resource "nsxt_policy_group" "RFC_1918" {
 
 ###################### creating Rules for Unified Access Gateway external ######################
 
-
-resource "nsxt_policy_security_policy" "UAG_external_Inbound" {
-  domain       = "dfw"
-  display_name = "UAG_external_Inbound"
-  description  = "Terraform UAG_external_Inbound Rule"
+resource "nsxt_policy_security_policy" "UAG_external" {
+  domain       = "cgw"
+  display_name = "UAG_external"
+  description  = "Terraform UAG_external Rule"
   category     = "Environment"
 
   rule {
     display_name       = "UAG_external_Inbound"
     source_groups      = []
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
-    action             = "allow"
-    services           = ["${nsxt_policy_service.Blast_TCP443.path}"] ["${nsxt_policy_service.Blast_TCP8443.path}"] ["${nsxt_policy_service.Blast_UDP443.path}"] ["${nsxt_policy_service.PCoIP_TCP4172.path}"] ["${nsxt_policy_service.PCoIP_UDP4172.path}"] ["${nsxt_policy_service.Blast_TCP9443.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
     logged             = true
-  }
-}
-
-resource "nsxt_policy_security_policy" "UAG_external_Outbound" {
-  domain       = "dfw"
-  display_name = "UAG_external_Outbound"
-  description  = "Terraform UAG_external_Outbound Rule"
-  category     = "Environment"
-
-  rule {
-    display_name       = "UAG_external_Outbound"
-    source_groups      = ["${nsxt_policy_group.UAG_external.path}"]
-    destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
-    action             = "allow"
-    services           = ["${nsxt_policy_service.Blast_TCP22443.path}"] ["${nsxt_policy_service.Blast_TCP8443.path}"]
-    logged             = true
-  }
+    }
+   rule {
+      display_name       = "UAG_external_Outbound"
+      source_groups      = ["${nsxt_policy_group.UAG_external.path}"]
+      destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
+      action             = "ALLOW"
+      services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.Blast_TCP8443.path}"]
+      logged             = true
+    }
 }
 
 ###################### creating Rules for Unified Access Gateway internal ######################
 
-resource "nsxt_policy_security_policy" "UAG_internal_Inbound" {
-  domain       = "dfw"
-  display_name = "UAG_internal_Inbound"
-  description  = "Terraform UAG_internal_Inbound Rule"
+resource "nsxt_policy_security_policy" "UAG_internal" {
+  domain       = "cgw"
+  display_name = "UAG_internal"
+  description  = "Terraform UAG_internal Rule"
   category     = "Environment"
 
   rule {
     display_name       = "UAG_internal_Inbound"
     source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
     destination_groups = ["${nsxt_policy_group.UAG_external.path}"]
-    action             = "allow"
-    services           = ["${nsxt_policy_service.Blast_TCP443.path}"] ["${nsxt_policy_service.Blast_TCP8443.path}"] ["${nsxt_policy_service.Blast_UDP443.path}"] ["${nsxt_policy_service.PCoIP_TCP4172.path}"] ["${nsxt_policy_service.PCoIP_UDP4172.path}"] ["${nsxt_policy_service.Blast_TCP9443.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.Blast_TCP8443.path}", "${nsxt_policy_service.Blast_UDP443.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}", "${nsxt_policy_service.Blast_TCP9443.path}"]
     logged             = true
   }
-}
-
-resource "nsxt_policy_security_policy" "UAG_internal_Outbound" {
-  domain       = "dfw"
-  display_name = "UAG_internal_Outbound"
-  description  = "Terraform UAG_internal_Outbound Rule"
-  category     = "Environment"
-
   rule {
     display_name       = "UAG_internal_Outbound"
     source_groups      = ["${nsxt_policy_group.UAG_internal.path}"]
     destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
-    action             = "allow"
-    services           = ["${nsxt_policy_service.Blast_TCP22443.path}"] ["${nsxt_policy_service.Blast_TCP8443.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.Blast_TCP8443.path}"]
     logged             = true
   }
 }
