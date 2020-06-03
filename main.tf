@@ -5,7 +5,6 @@ provider "nsxt" {
   enforcement_point    = "vmc-enforcementpoint"
 }
 
-
 ###################### creating all Services ######################
 
 // creating Services TCP 8443:
@@ -310,7 +309,7 @@ resource "nsxt_policy_security_policy" "UAG_external" {
       source_groups      = ["${nsxt_policy_group.UAG_external.path}"]
       destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
       action             = "ALLOW"
-      services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.Blast_TCP8443.path}"]
+      services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
       logged             = true
     }
 }
@@ -336,7 +335,9 @@ resource "nsxt_policy_security_policy" "UAG_internal" {
     source_groups      = ["${nsxt_policy_group.UAG_internal.path}"]
     destination_groups = ["${nsxt_policy_group.VDI_Clients.path}"]
     action             = "ALLOW"
-    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.Blast_TCP8443.path}"]
+    services           = ["${nsxt_policy_service.Blast_TCP22443.path}", "${nsxt_policy_service.RDP_TCP3389.path}", "${nsxt_policy_service.CDR_MMR_TCP9427.path}", "${nsxt_policy_service.USB_TCP32111.path}", "${nsxt_policy_service.PCoIP_TCP4172.path}", "${nsxt_policy_service.PCoIP_UDP4172.path}"]
     logged             = true
   }
 }
+
+###################### creating Rules for Unified Access Gateway internal ######################
