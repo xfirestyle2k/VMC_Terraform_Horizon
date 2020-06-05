@@ -188,6 +188,18 @@ resource "nsxt_policy_service" "vROPS_TCP3091" {
     destination_ports = ["3091"]
   }
 }
+// creating Services TCP 3099:
+resource "nsxt_policy_service" "vROPS_TCP3099" {
+  description  = "vROPS service provisioned by Terraform"
+  display_name = "vROPS_TCP3099"
+
+  l4_port_set_entry {
+    display_name      = "TCP3099"
+    description       = "TCP port 3099 entry"
+    protocol          = "TCP"
+    destination_ports = ["3099"]
+  }
+}
 
 // creating Services TCP 3101:
 resource "nsxt_policy_service" "vROPS_TCP3101" {
@@ -376,6 +388,14 @@ resource "nsxt_policy_group" "Workspace1_Access" {
   description  = "Created from Terraform Workspace1_Access"
   domain       = "cgw"
 }
+
+// creating Group for Workspace1_Access:
+resource "nsxt_policy_group" "Horizon_Cloud_Connector" {
+  display_name = "Horizon_Cloud_Connector"
+  description  = "Created from Terraform Horizon_Cloud_Connector"
+  domain       = "cgw"
+}
+
 // creating Group for vCenter:
 resource "nsxt_policy_group" "vCenter" {
   display_name = "vCenter"
@@ -584,15 +604,31 @@ resource "nsxt_policy_security_policy" "Horizon_Connection_Server" {
     services           = ["${nsxt_policy_service.Blast_TCP9443.path}"]
     logged             = true
   }
-
-  /*rule {
-    display_name       = "Horizon_Connection_Server_AppVol_Outbound"
+  rule {
+    display_name       = "ConnectionServer_JMP_Server_Outbound"
     source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
-    destination_groups = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    destination_groups = ["${nsxt_policy_group.JMP_Server.path}"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
-  }*/
+  }
+
+  rule {
+    display_name       = "Horizon_Connection_Server_Enrollment_Server_Outbound"
+    source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
+    destination_groups = ["${nsxt_policy_group.Enrollment_Server.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.USB_TCP32111.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_Connection_Server_vROPS_Outbound"
+    source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
+    destination_groups = ["${nsxt_policy_group.vROPS.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.vROPS_TCP3091.path}", "${nsxt_policy_service.vROPS_TCP3101.path}", "${nsxt_policy_service.vROPS_TCP3100.path}"]
+    logged             = true
+  }
 }
 
 ###################### creating Ruleset for Admin Access ######################
@@ -621,9 +657,41 @@ resource "nsxt_policy_security_policy" "Admin_Access" {
     logged             = true
   }
   rule {
-    display_name       = "Admin_Horizon_Connection_Server_Inbound"
+    display_name       = "ADMIN_Workspace1_Access_Outbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.Workspace1_Access.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP8443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Admin_Horizon_Connection_Server_Outbound"
     source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
     destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Admin_Horizon_AppVol_Outbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Admin_Horizon_vROPS_Outbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.vROPS.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Admin_Horizon_Horizon_Cloud_Connector_Outbound"
+    source_groups      = ["${nsxt_policy_group.Admin_VMs.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -639,11 +707,35 @@ resource "nsxt_policy_security_policy" "Horizon_VDI_Clients" {
   category     = "Environment"
 
   rule {
-    display_name       = "VDI_Clients_Horizon_Connection_Server_Inbound"
+    display_name       = "VDI_Clients_Horizon_Connection_Server_Outbound"
     source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
     destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.ldap_TCP389.path}", "${nsxt_policy_service.JMS_SSL_TCP4002.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "VDI_Clients_Horizon_AppVol_Outbound"
+    source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
+    destination_groups = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "VDI_Clients_Horizon_vROPS_Outbound"
+    source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
+    destination_groups = ["${nsxt_policy_group.vROPS.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.vROPS_TCP3091.path}", "${nsxt_policy_service.vROPS_TCP3099.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "VDI_Clients_Horizon_Cloud_Connector_Outbound"
+    source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.TCP11002.path}"]
     logged             = true
   }
 }
@@ -655,7 +747,6 @@ resource "nsxt_policy_security_policy" "Horizon_VDI_Clients" {
     description  = "Terraform Workspace1_Connector Ruleset"
     category     = "Environment"
 
-
     rule {
       display_name       = "Workspace_One_Connector_Horizon_Connection_Server_Outbound"
       source_groups      = ["${nsxt_policy_group.Workspace1_Connector.path}"]
@@ -664,4 +755,107 @@ resource "nsxt_policy_security_policy" "Horizon_VDI_Clients" {
       services           = ["${nsxt_policy_service.Blast_TCP443.path}", "${nsxt_policy_service.ldap_TCP389.path}"]
       logged             = true
     }
+    rule {
+      display_name       = "Workspace_One_Connector_Workspace_One_Access_Outbound"
+      source_groups      = ["${nsxt_policy_group.Workspace1_Connector.path}"]
+      destination_groups = ["${nsxt_policy_group.Workspace1_Access.path}"]
+      action             = "ALLOW"
+      services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+      logged             = true
+    }
+}
+
+###################### creating Ruleset for Workspace1_Access ######################
+
+resource "nsxt_policy_security_policy" "Workspace1_Access" {
+  domain       = "cgw"
+  display_name = "Workspace1_Access"
+  description  = "Terraform Workspace1_Access Ruleset"
+  category     = "Environment"
+
+  rule {
+    display_name       = "Workspace1_Access_Inbound"
+    source_groups      = []
+    destination_groups = ["${nsxt_policy_group.Workspace1_Access.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}
+###################### creating Ruleset for JMP_Server ######################
+
+resource "nsxt_policy_security_policy" "JMP_Server" {
+  domain       = "cgw"
+  display_name = "JMP_Server"
+  description  = "Terraform JMP_Server Ruleset"
+  category     = "Environment"
+
+  rule {
+    display_name       = "JMP_Server_AppVol_Outbound"
+    source_groups      = ["${nsxt_policy_group.JMP_Server.path}"]
+    destination_groups = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "JMP_Server_ConnectionServer_Outbound"
+    source_groups      = ["${nsxt_policy_group.JMP_Server.path}"]
+    destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}
+
+###################### creating Ruleset for AppVolumes ######################
+
+resource "nsxt_policy_security_policy" "AppVolumes" {
+  domain       = "cgw"
+  display_name = "AppVolumes"
+  description  = "Terraform AppVolumes Ruleset"
+  category     = "Environment"
+
+  rule {
+    display_name       = "AppVol_vCenter_Outbound"
+    source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    destination_groups = ["${nsxt_policy_group.vCenter.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+  rule {
+    display_name       = "AppVol_ESXi_Outbound"
+    source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
+    destination_groups = ["${nsxt_policy_group.ESXi.path}"]
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}
+
+###################### creating Ruleset for Horizon_Cloud_Connector ######################
+
+resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
+  domain       = "cgw"
+  display_name = "Horizon_Cloud_Connector"
+  description  = "Terraform Horizon_Cloud_Connector Ruleset"
+  category     = "Environment"
+  rule {
+    display_name       = "AppVol_ESXi_Outbound"
+    source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
+    destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
+    action             = "ALLOW"
+    services           = []
+    logged             = true
+  }
+  rule {
+    display_name       = "AppVol_ESXi_Outbound"
+    source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
+    destination_groups = ["${nsxt_policy_group.RFC_1918.path}"]
+    destinations_excluded = true
+    action             = "ALLOW"
+    services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
 }

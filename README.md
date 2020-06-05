@@ -7,10 +7,11 @@ In this script I using VMC on AWS and the Terraform Provider for NSX-T.
 
 # About Rules
 
-After you applyed the Ruleset. Some Rules depending on your Environment. Following you can find some explainations.
+This Terraform script only apply VMware related connections! Ports like DNS, NTP, Syslog etc. are missing.
 
-If you using internal Unified Access Gateways, you are able to delete Section: "Internal_Client_Connection"
-It is only necessary if you haven't deployed internal Unified access Gateways. 
+This script should only support you to build a whitelist Firewall Horizon Plattform.
+
+
 
 # Terraform NSX-T Provider
 The newest version from Terraform NSX-T Provider can always be found here: https://github.com/terraform-providers/terraform-provider-nsxt/
@@ -23,10 +24,10 @@ website][tf-website] and the [GitHub project page][tf-github].
 [tf-website]: https://terraform.io/
 [tf-github]: https://github.com/hashicorp/terraform
 
-To get familiar with VMC and VMC NSX-T I highly recommend to take a look on the Blog posts of Nicolas Vibert
+To get familiar with VMC and VMC NSX-T I highly recommend to take a look on the Blog posts of Nicolas Vibert:
 https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/
 
-Everything I leared, I learned from him :)! @Nico Thank you! You are awesome!
+Everything I did, I learned from him :)! @Nico Thank you! You are awesome!
 
 # Support
 
