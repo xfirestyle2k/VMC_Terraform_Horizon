@@ -1,0 +1,2859 @@
+{
+  "version": 4,
+  "terraform_version": "0.12.24",
+  "serial": 945,
+  "lineage": "4d918a12-42e7-407f-afb2-1bbecd006567",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Admin_VMs",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Admin_VMs",
+            "display_name": "Admin_VMs",
+            "domain": "cgw",
+            "id": "a1cc02c8-08a0-45ce-85eb-b48b6918e3d4",
+            "nsx_id": "a1cc02c8-08a0-45ce-85eb-b48b6918e3d4",
+            "path": "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "AppVol_MGMT",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform AppVol_MGMT",
+            "display_name": "AppVol_MGMT",
+            "domain": "cgw",
+            "id": "678f23ca-df66-475e-9b18-5586e84918a2",
+            "nsx_id": "678f23ca-df66-475e-9b18-5586e84918a2",
+            "path": "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "ConnectionServer",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform ConnectionServer",
+            "display_name": "ConnectionServer",
+            "domain": "cgw",
+            "id": "dfc05170-a4a8-4a8d-98c2-5079cbc95c75",
+            "nsx_id": "dfc05170-a4a8-4a8d-98c2-5079cbc95c75",
+            "path": "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "ESXi",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform ESXi",
+            "display_name": "ESXi",
+            "domain": "cgw",
+            "id": "4d96157a-6d98-40b8-9d60-66747359ac83",
+            "nsx_id": "4d96157a-6d98-40b8-9d60-66747359ac83",
+            "path": "/infra/domains/cgw/groups/4d96157a-6d98-40b8-9d60-66747359ac83",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Enrollment_Server",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Enrollment_Server",
+            "display_name": "Enrollment_Server",
+            "domain": "cgw",
+            "id": "4b76ce5d-ba3a-45cc-87d6-87e4fe4d2583",
+            "nsx_id": "4b76ce5d-ba3a-45cc-87d6-87e4fe4d2583",
+            "path": "/infra/domains/cgw/groups/4b76ce5d-ba3a-45cc-87d6-87e4fe4d2583",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Event_Database",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Event_Database",
+            "display_name": "Event_Database",
+            "domain": "cgw",
+            "id": "139e8f31-3f32-4b3b-a093-0062013a5bbe",
+            "nsx_id": "139e8f31-3f32-4b3b-a093-0062013a5bbe",
+            "path": "/infra/domains/cgw/groups/139e8f31-3f32-4b3b-a093-0062013a5bbe",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Horizon_Cloud_Connector",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Horizon_Cloud_Connector",
+            "display_name": "Horizon_Cloud_Connector",
+            "domain": "cgw",
+            "id": "cc3118c1-ae1c-486d-906f-e6f537e81689",
+            "nsx_id": "cc3118c1-ae1c-486d-906f-e6f537e81689",
+            "path": "/infra/domains/cgw/groups/cc3118c1-ae1c-486d-906f-e6f537e81689",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "JMP_Server",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform JMP_Server",
+            "display_name": "JMP_Server",
+            "domain": "cgw",
+            "id": "890fc620-124e-4a51-86a2-c5b696b9dbf3",
+            "nsx_id": "890fc620-124e-4a51-86a2-c5b696b9dbf3",
+            "path": "/infra/domains/cgw/groups/890fc620-124e-4a51-86a2-c5b696b9dbf3",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "RFC_1918",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [
+              {
+                "condition": [],
+                "ipaddress_expression": [
+                  {
+                    "ip_addresses": [
+                      "10.0.0.0/8",
+                      "172.16.0.0/16",
+                      "192.168.0.0/16"
+                    ]
+                  }
+                ],
+                "path_expression": []
+              }
+            ],
+            "description": "Created from Terraform RFC_1918",
+            "display_name": "RFC_1918",
+            "domain": "cgw",
+            "id": "6e3a9419-7c4a-4235-b1dc-5dbee98a0080",
+            "nsx_id": "6e3a9419-7c4a-4235-b1dc-5dbee98a0080",
+            "path": "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "UAG_external",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform UAG_external",
+            "display_name": "UAG_external",
+            "domain": "cgw",
+            "id": "57827e53-8fc9-42cc-a785-7765043b36df",
+            "nsx_id": "57827e53-8fc9-42cc-a785-7765043b36df",
+            "path": "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "UAG_internal",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform UAG_internal",
+            "display_name": "UAG_internal",
+            "domain": "cgw",
+            "id": "d485512a-e29e-47f9-b5c3-6504cea1613c",
+            "nsx_id": "d485512a-e29e-47f9-b5c3-6504cea1613c",
+            "path": "/infra/domains/cgw/groups/d485512a-e29e-47f9-b5c3-6504cea1613c",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "VDI_Clients",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform VDI_Clients",
+            "display_name": "VDI_Clients",
+            "domain": "cgw",
+            "id": "e22f6a31-68f5-46b9-a035-2e7e5335f3fc",
+            "nsx_id": "e22f6a31-68f5-46b9-a035-2e7e5335f3fc",
+            "path": "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Workspace1_Access",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Workspace1_Access",
+            "display_name": "Workspace1_Access",
+            "domain": "cgw",
+            "id": "65de6386-e1d0-4732-8b34-208eba041f1c",
+            "nsx_id": "65de6386-e1d0-4732-8b34-208eba041f1c",
+            "path": "/infra/domains/cgw/groups/65de6386-e1d0-4732-8b34-208eba041f1c",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "Workspace1_Connector",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform Workspace1_Connector",
+            "display_name": "Workspace1_Connector",
+            "domain": "cgw",
+            "id": "62cc0d49-3393-4ce2-89fb-389104b0524d",
+            "nsx_id": "62cc0d49-3393-4ce2-89fb-389104b0524d",
+            "path": "/infra/domains/cgw/groups/62cc0d49-3393-4ce2-89fb-389104b0524d",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "vCenter",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform vCenter",
+            "display_name": "vCenter",
+            "domain": "cgw",
+            "id": "d688c73c-e282-466a-9dd3-d7130c124a3b",
+            "nsx_id": "d688c73c-e282-466a-9dd3-d7130c124a3b",
+            "path": "/infra/domains/cgw/groups/d688c73c-e282-466a-9dd3-d7130c124a3b",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_group",
+      "name": "vROPS",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "conjunction": [],
+            "criteria": [],
+            "description": "Created from Terraform vROPS",
+            "display_name": "vROPS",
+            "domain": "cgw",
+            "id": "2497bc55-cbc5-4287-a908-a44d844682a8",
+            "nsx_id": "2497bc55-cbc5-4287-a908-a44d844682a8",
+            "path": "/infra/domains/cgw/groups/2497bc55-cbc5-4287-a908-a44d844682a8",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Admin_Access",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Admin_Access Ruleset",
+            "display_name": "Admin_Access",
+            "domain": "cgw",
+            "id": "ac8877d7-bc36-4c17-9b52-20a41f6c67dc",
+            "locked": false,
+            "nsx_id": "ac8877d7-bc36-4c17-9b52-20a41f6c67dc",
+            "path": "/infra/domains/cgw/security-policies/ac8877d7-bc36-4c17-9b52-20a41f6c67dc",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ADMIN_UAG_External_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/d485512a-e29e-47f9-b5c3-6504cea1613c"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ADMIN_UAG_Internal_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/65de6386-e1d0-4732-8b34-208eba041f1c"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ADMIN_Workspace1_Access_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 2,
+                "services": [
+                  "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Admin_Horizon_Connection_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 3,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Admin_Horizon_AppVol_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 4,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/2497bc55-cbc5-4287-a908-a44d844682a8"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Admin_Horizon_vROPS_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 5,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/cc3118c1-ae1c-486d-906f-e6f537e81689"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Admin_Horizon_Horizon_Cloud_Connector_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 6,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/a1cc02c8-08a0-45ce-85eb-b48b6918e3d4"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.Admin_VMs",
+            "nsxt_policy_group.AppVol_MGMT",
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.Horizon_Cloud_Connector",
+            "nsxt_policy_group.UAG_external",
+            "nsxt_policy_group.UAG_internal",
+            "nsxt_policy_group.Workspace1_Access",
+            "nsxt_policy_group.vROPS",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.Blast_TCP8443",
+            "nsxt_policy_service.Blast_TCP9443"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "AppVolumes",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform AppVolumes Ruleset",
+            "display_name": "AppVolumes",
+            "domain": "cgw",
+            "id": "1f4faa9d-2257-47b7-8aaa-f5fa282546ac",
+            "locked": false,
+            "nsx_id": "1f4faa9d-2257-47b7-8aaa-f5fa282546ac",
+            "path": "/infra/domains/cgw/security-policies/1f4faa9d-2257-47b7-8aaa-f5fa282546ac",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/d688c73c-e282-466a-9dd3-d7130c124a3b"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "AppVol_vCenter_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/4d96157a-6d98-40b8-9d60-66747359ac83"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "AppVol_ESXi_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.AppVol_MGMT",
+            "nsxt_policy_group.ESXi",
+            "nsxt_policy_group.vCenter",
+            "nsxt_policy_service.Blast_TCP443"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Horizon_Cloud_Connector",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Horizon_Cloud_Connector Ruleset",
+            "display_name": "Horizon_Cloud_Connector",
+            "domain": "cgw",
+            "id": "f4fc2c4e-a081-4d0b-a21a-fe3d7aac5b3b",
+            "locked": false,
+            "nsx_id": "f4fc2c4e-a081-4d0b-a21a-fe3d7aac5b3b",
+            "path": "/infra/domains/cgw/security-policies/f4fc2c4e-a081-4d0b-a21a-fe3d7aac5b3b",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "AppVol_ESXi_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": null,
+                "source_groups": [
+                  "/infra/domains/cgw/groups/cc3118c1-ae1c-486d-906f-e6f537e81689"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080"
+                ],
+                "destinations_excluded": true,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "AppVol_ESXi_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/cc3118c1-ae1c-486d-906f-e6f537e81689"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.Horizon_Cloud_Connector",
+            "nsxt_policy_group.RFC_1918",
+            "nsxt_policy_service.Blast_TCP443"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Horizon_Connection_Server",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Horizon_Connection_Server Ruleset",
+            "display_name": "Horizon_Connection_Server",
+            "domain": "cgw",
+            "id": "6baf9d9f-0ac4-4080-9ddc-db7cebb3c304",
+            "locked": false,
+            "nsx_id": "6baf9d9f-0ac4-4080-9ddc-db7cebb3c304",
+            "path": "/infra/domains/cgw/security-policies/6baf9d9f-0ac4-4080-9ddc-db7cebb3c304",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_Connection_Server_In-/Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/3bfde9d8-c4a7-4944-ac0d-591bbe1d18f2",
+                  "/infra/services/54d6b9a2-5e41-455c-ab9b-351180f7ffc4",
+                  "/infra/services/8d166072-05ba-4a27-b02d-a4ea497b0576"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/139e8f31-3f32-4b3b-a093-0062013a5bbe"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_Event_DB_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/00cde973-2c4f-4cb6-af2d-1461c4c34167"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/d688c73c-e282-466a-9dd3-d7130c124a3b"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_vCenter_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 2,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_AppVol_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 3,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_Tunneled_Connection_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 4,
+                "services": [
+                  "/infra/services/115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+                  "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5",
+                  "/infra/services/82c557a8-c3f4-4019-80f9-13c20f92e643",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+                  "/infra/services/f706c961-1c7e-47c7-b480-00c5ce3d9c79"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ConnectionServer_UAG_external_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 5,
+                "services": [
+                  "/infra/services/ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/d485512a-e29e-47f9-b5c3-6504cea1613c"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ConnectionServer_UAG_internal_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 6,
+                "services": [
+                  "/infra/services/ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/890fc620-124e-4a51-86a2-c5b696b9dbf3"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "ConnectionServer_JMP_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 7,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/4b76ce5d-ba3a-45cc-87d6-87e4fe4d2583"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_Enrollment_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 8,
+                "services": [
+                  "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/2497bc55-cbc5-4287-a908-a44d844682a8"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Horizon_Connection_Server_vROPS_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 9,
+                "services": [
+                  "/infra/services/310afc9b-d06d-46b5-8902-5de3315bfefa",
+                  "/infra/services/9b4f38fb-3bba-4283-85b7-93413473a367",
+                  "/infra/services/debf3f24-26bd-4f70-b243-963f15af06c0"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.AppVol_MGMT",
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.Enrollment_Server",
+            "nsxt_policy_group.Event_Database",
+            "nsxt_policy_group.JMP_Server",
+            "nsxt_policy_group.UAG_external",
+            "nsxt_policy_group.UAG_internal",
+            "nsxt_policy_group.VDI_Clients",
+            "nsxt_policy_group.vCenter",
+            "nsxt_policy_group.vROPS",
+            "nsxt_policy_service.ADLDS_TCP22389",
+            "nsxt_policy_service.ADLDS_TCP22636",
+            "nsxt_policy_service.Blast_TCP22443",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.Blast_TCP9443",
+            "nsxt_policy_service.CDR_MMR_TCP9427",
+            "nsxt_policy_service.EventDB_TCP1433",
+            "nsxt_policy_service.PCoIP_TCP4172",
+            "nsxt_policy_service.PCoIP_UDP4172",
+            "nsxt_policy_service.RDP_TCP3389",
+            "nsxt_policy_service.USB_TCP32111",
+            "nsxt_policy_service.VIPA_TCP8472",
+            "nsxt_policy_service.vROPS_TCP3091",
+            "nsxt_policy_service.vROPS_TCP3100",
+            "nsxt_policy_service.vROPS_TCP3101"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Horizon_VDI_Clients",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Horizon_VDI_Clients Ruleset",
+            "display_name": "Horizon_VDI_Clients",
+            "domain": "cgw",
+            "id": "61224d2e-0a62-4287-bd9e-faf0ba08714f",
+            "locked": false,
+            "nsx_id": "61224d2e-0a62-4287-bd9e-faf0ba08714f",
+            "path": "/infra/domains/cgw/security-policies/61224d2e-0a62-4287-bd9e-faf0ba08714f",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "VDI_Clients_Horizon_Connection_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/0840533c-c784-4942-ae52-31f35426d216",
+                  "/infra/services/856de9ae-6f2e-4c9e-8aad-23708a0d9d58"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "VDI_Clients_Horizon_AppVol_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/2497bc55-cbc5-4287-a908-a44d844682a8"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "VDI_Clients_Horizon_vROPS_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 2,
+                "services": [
+                  "/infra/services/9b4f38fb-3bba-4283-85b7-93413473a367",
+                  "/infra/services/e3860b1c-ff9f-4d07-adf4-6e73740ce0e6"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/cc3118c1-ae1c-486d-906f-e6f537e81689"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "VDI_Clients_Horizon_Cloud_Connector_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 3,
+                "services": [
+                  "/infra/services/80f3142a-396c-48b9-9f11-aebea58cedb0"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.AppVol_MGMT",
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.Horizon_Cloud_Connector",
+            "nsxt_policy_group.VDI_Clients",
+            "nsxt_policy_group.vROPS",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.JMS_SSL_TCP4002",
+            "nsxt_policy_service.TCP11002",
+            "nsxt_policy_service.ldap_TCP389",
+            "nsxt_policy_service.vROPS_TCP3091",
+            "nsxt_policy_service.vROPS_TCP3099"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Internal_Client_Connection",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Internal_Client_Connection Ruleset",
+            "display_name": "Internal_Client_Connection",
+            "domain": "cgw",
+            "id": "19de1922-7e63-444d-b535-7404abcf6d38",
+            "locked": false,
+            "nsx_id": "19de1922-7e63-444d-b535-7404abcf6d38",
+            "path": "/infra/domains/cgw/security-policies/19de1922-7e63-444d-b535-7404abcf6d38",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Internal_Client_Connection_VDI_Clients_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5",
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/82c557a8-c3f4-4019-80f9-13c20f92e643",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+                  "/infra/services/f706c961-1c7e-47c7-b480-00c5ce3d9c79"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Internal_Client_Connection_Connection_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.RFC_1918",
+            "nsxt_policy_group.VDI_Clients",
+            "nsxt_policy_service.Blast_TCP22443",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.CDR_MMR_TCP9427",
+            "nsxt_policy_service.PCoIP_TCP4172",
+            "nsxt_policy_service.PCoIP_UDP4172",
+            "nsxt_policy_service.RDP_TCP3389",
+            "nsxt_policy_service.USB_TCP32111"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "JMP_Server",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform JMP_Server Ruleset",
+            "display_name": "JMP_Server",
+            "domain": "cgw",
+            "id": "0e45ea55-2886-43a8-a424-c23fb4ff2450",
+            "locked": false,
+            "nsx_id": "0e45ea55-2886-43a8-a424-c23fb4ff2450",
+            "path": "/infra/domains/cgw/security-policies/0e45ea55-2886-43a8-a424-c23fb4ff2450",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/678f23ca-df66-475e-9b18-5586e84918a2"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "JMP_Server_AppVol_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/890fc620-124e-4a51-86a2-c5b696b9dbf3"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "JMP_Server_ConnectionServer_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/890fc620-124e-4a51-86a2-c5b696b9dbf3"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.AppVol_MGMT",
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.JMP_Server",
+            "nsxt_policy_service.Blast_TCP443"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "UAG_external",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform UAG_external Ruleset",
+            "display_name": "UAG_external",
+            "domain": "cgw",
+            "id": "cfc145ab-d161-4e45-96b2-dda498c3b86c",
+            "locked": false,
+            "nsx_id": "cfc145ab-d161-4e45-96b2-dda498c3b86c",
+            "path": "/infra/domains/cgw/security-policies/cfc145ab-d161-4e45-96b2-dda498c3b86c",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_external_Clients_Inbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715",
+                  "/infra/services/d5fde84d-31d1-4abc-9a93-0233bf357426",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080"
+                ],
+                "sources_excluded": true,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_external_VDI_Clients_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+                  "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5",
+                  "/infra/services/82c557a8-c3f4-4019-80f9-13c20f92e643",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+                  "/infra/services/f706c961-1c7e-47c7-b480-00c5ce3d9c79"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_external_ConnectionServer_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 2,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.RFC_1918",
+            "nsxt_policy_group.UAG_external",
+            "nsxt_policy_group.VDI_Clients",
+            "nsxt_policy_service.Blast_TCP22443",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.Blast_TCP8443",
+            "nsxt_policy_service.Blast_UDP443",
+            "nsxt_policy_service.CDR_MMR_TCP9427",
+            "nsxt_policy_service.PCoIP_TCP4172",
+            "nsxt_policy_service.PCoIP_UDP4172",
+            "nsxt_policy_service.RDP_TCP3389",
+            "nsxt_policy_service.USB_TCP32111"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "UAG_internal",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform UAG_internal Ruleset",
+            "display_name": "UAG_internal",
+            "domain": "cgw",
+            "id": "95629893-c4ea-4833-86e2-fcd0193955a6",
+            "locked": false,
+            "nsx_id": "95629893-c4ea-4833-86e2-fcd0193955a6",
+            "path": "/infra/domains/cgw/security-policies/95629893-c4ea-4833-86e2-fcd0193955a6",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/57827e53-8fc9-42cc-a785-7765043b36df"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_internal_Clients_Inbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715",
+                  "/infra/services/d5fde84d-31d1-4abc-9a93-0233bf357426",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/6e3a9419-7c4a-4235-b1dc-5dbee98a0080"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/e22f6a31-68f5-46b9-a035-2e7e5335f3fc"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_internal_VDI_Clients_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+                  "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5",
+                  "/infra/services/82c557a8-c3f4-4019-80f9-13c20f92e643",
+                  "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+                  "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+                  "/infra/services/f706c961-1c7e-47c7-b480-00c5ce3d9c79"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/d485512a-e29e-47f9-b5c3-6504cea1613c"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "UAG_internal_ConnectionServer_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 2,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/d485512a-e29e-47f9-b5c3-6504cea1613c"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.RFC_1918",
+            "nsxt_policy_group.UAG_external",
+            "nsxt_policy_group.UAG_internal",
+            "nsxt_policy_group.VDI_Clients",
+            "nsxt_policy_service.Blast_TCP22443",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.Blast_TCP8443",
+            "nsxt_policy_service.Blast_UDP443",
+            "nsxt_policy_service.CDR_MMR_TCP9427",
+            "nsxt_policy_service.PCoIP_TCP4172",
+            "nsxt_policy_service.PCoIP_UDP4172",
+            "nsxt_policy_service.RDP_TCP3389",
+            "nsxt_policy_service.USB_TCP32111"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Workspace1_Access",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Workspace1_Access Ruleset",
+            "display_name": "Workspace1_Access",
+            "domain": "cgw",
+            "id": "3e12e2ba-f131-4571-bd37-78ce989567e7",
+            "locked": false,
+            "nsx_id": "3e12e2ba-f131-4571-bd37-78ce989567e7",
+            "path": "/infra/domains/cgw/security-policies/3e12e2ba-f131-4571-bd37-78ce989567e7",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/65de6386-e1d0-4732-8b34-208eba041f1c"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Workspace1_Access_Inbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": null,
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.Workspace1_Access",
+            "nsxt_policy_service.Blast_TCP443"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_security_policy",
+      "name": "Workspace1_Connector",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "category": "Environment",
+            "comments": "",
+            "description": "Terraform Workspace1_Connector Ruleset",
+            "display_name": "Workspace1_Connector",
+            "domain": "cgw",
+            "id": "82599249-37e4-4f43-ad68-06407b9d8fdd",
+            "locked": false,
+            "nsx_id": "82599249-37e4-4f43-ad68-06407b9d8fdd",
+            "path": "/infra/domains/cgw/security-policies/82599249-37e4-4f43-ad68-06407b9d8fdd",
+            "revision": 0,
+            "rule": [
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/dfc05170-a4a8-4a8d-98c2-5079cbc95c75"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Workspace_One_Connector_Horizon_Connection_Server_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 0,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+                  "/infra/services/856de9ae-6f2e-4c9e-8aad-23708a0d9d58"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/62cc0d49-3393-4ce2-89fb-389104b0524d"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              },
+              {
+                "action": "ALLOW",
+                "description": "",
+                "destination_groups": [
+                  "/infra/domains/cgw/groups/65de6386-e1d0-4732-8b34-208eba041f1c"
+                ],
+                "destinations_excluded": false,
+                "direction": "IN_OUT",
+                "disabled": false,
+                "display_name": "Workspace_One_Connector_Workspace_One_Access_Outbound",
+                "ip_version": "IPV4_IPV6",
+                "log_label": "",
+                "logged": true,
+                "notes": "",
+                "profiles": null,
+                "revision": 0,
+                "rule_id": 0,
+                "scope": null,
+                "sequence_number": 1,
+                "services": [
+                  "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85"
+                ],
+                "source_groups": [
+                  "/infra/domains/cgw/groups/62cc0d49-3393-4ce2-89fb-389104b0524d"
+                ],
+                "sources_excluded": false,
+                "tag": []
+              }
+            ],
+            "scope": null,
+            "sequence_number": 0,
+            "stateful": true,
+            "tag": [],
+            "tcp_strict": false
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "nsxt_policy_group.ConnectionServer",
+            "nsxt_policy_group.Workspace1_Access",
+            "nsxt_policy_group.Workspace1_Connector",
+            "nsxt_policy_service.Blast_TCP443",
+            "nsxt_policy_service.ldap_TCP389"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "ADLDS_TCP22389",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "ADLDS service provisioned by Terraform",
+            "display_name": "ADLDS_TCP22389",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "8d166072-05ba-4a27-b02d-a4ea497b0576",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 22389 entry",
+                "destination_ports": [
+                  "22389"
+                ],
+                "display_name": "TCP22389",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "8d166072-05ba-4a27-b02d-a4ea497b0576",
+            "path": "/infra/services/8d166072-05ba-4a27-b02d-a4ea497b0576",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "ADLDS_TCP22636",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "ADLDS service provisioned by Terraform",
+            "display_name": "ADLDS_TCP22636",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "3bfde9d8-c4a7-4944-ac0d-591bbe1d18f2",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 22636 entry",
+                "destination_ports": [
+                  "22636"
+                ],
+                "display_name": "TCP22636",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "3bfde9d8-c4a7-4944-ac0d-591bbe1d18f2",
+            "path": "/infra/services/3bfde9d8-c4a7-4944-ac0d-591bbe1d18f2",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_TCP22443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast TCP22443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 22443 entry",
+                "destination_ports": [
+                  "22443"
+                ],
+                "display_name": "TCP22443",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+            "path": "/infra/services/115c4e7b-63f7-4c6a-9620-dae20fff32cc",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_TCP443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast TCP443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 433 entry",
+                "destination_ports": [
+                  "433"
+                ],
+                "display_name": "TCP433",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+            "path": "/infra/services/42d5dacc-ef3e-4b39-9ded-1fbf0aefdf85",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_TCP8443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast TCP8443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "43875b3c-da2d-40ea-b0b6-f2a3b599e715",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 8443 entry",
+                "destination_ports": [
+                  "8443"
+                ],
+                "display_name": "TCP8443",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "43875b3c-da2d-40ea-b0b6-f2a3b599e715",
+            "path": "/infra/services/43875b3c-da2d-40ea-b0b6-f2a3b599e715",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_TCP9443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast TCP9443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 9443 entry",
+                "destination_ports": [
+                  "9443"
+                ],
+                "display_name": "TCP9443",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae",
+            "path": "/infra/services/ed9e2f0b-0330-4d5d-aefb-41eeb66c45ae",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_UDP22443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast UDP22443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "ec052a1b-4c31-43bb-9dc5-6f4429d529de",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "UDP port 22443 entry",
+                "destination_ports": [
+                  "22443"
+                ],
+                "display_name": "UDP22443",
+                "protocol": "UDP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "ec052a1b-4c31-43bb-9dc5-6f4429d529de",
+            "path": "/infra/services/ec052a1b-4c31-43bb-9dc5-6f4429d529de",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_UDP443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast UDP443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "d5fde84d-31d1-4abc-9a93-0233bf357426",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "UDP port 433 entry",
+                "destination_ports": [
+                  "433"
+                ],
+                "display_name": "UDP433",
+                "protocol": "UDP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "d5fde84d-31d1-4abc-9a93-0233bf357426",
+            "path": "/infra/services/d5fde84d-31d1-4abc-9a93-0233bf357426",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "Blast_UDP8443",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "Blast service provisioned by Terraform",
+            "display_name": "Blast UDP8443",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "40b3369a-a3b8-4fc5-b98f-b6884b887abe",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "UDP port 8443 entry",
+                "destination_ports": [
+                  "8443"
+                ],
+                "display_name": "UDP8443",
+                "protocol": "UDP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "40b3369a-a3b8-4fc5-b98f-b6884b887abe",
+            "path": "/infra/services/40b3369a-a3b8-4fc5-b98f-b6884b887abe",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "CDR_MMR_TCP9427",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "CDR/MMR service provisioned by Terraform",
+            "display_name": "CDR/MMR TCP9427",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "f706c961-1c7e-47c7-b480-00c5ce3d9c79",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 9427 entry",
+                "destination_ports": [
+                  "9427"
+                ],
+                "display_name": "TCP9427",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "f706c961-1c7e-47c7-b480-00c5ce3d9c79",
+            "path": "/infra/services/f706c961-1c7e-47c7-b480-00c5ce3d9c79",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "EventDB_TCP1433",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "USB service provisioned by Terraform",
+            "display_name": "EventDB_TCP1433",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "00cde973-2c4f-4cb6-af2d-1461c4c34167",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 1433 entry",
+                "destination_ports": [
+                  "1433"
+                ],
+                "display_name": "TCP1433",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "00cde973-2c4f-4cb6-af2d-1461c4c34167",
+            "path": "/infra/services/00cde973-2c4f-4cb6-af2d-1461c4c34167",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "JMS_SSL_TCP4002",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "JMS_SSL service provisioned by Terraform",
+            "display_name": "JMS_SSL_TCP4002",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "0840533c-c784-4942-ae52-31f35426d216",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 4002 entry",
+                "destination_ports": [
+                  "4002"
+                ],
+                "display_name": "TCP4002",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "0840533c-c784-4942-ae52-31f35426d216",
+            "path": "/infra/services/0840533c-c784-4942-ae52-31f35426d216",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "JMS_SSL_TCP4101",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "JMS_SSL service provisioned by Terraform",
+            "display_name": "JMS_SSL_TCP4101",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "bd226223-1463-4d73-82ac-192733c59a90",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 4101 entry",
+                "destination_ports": [
+                  "4101"
+                ],
+                "display_name": "TCP4101",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "bd226223-1463-4d73-82ac-192733c59a90",
+            "path": "/infra/services/bd226223-1463-4d73-82ac-192733c59a90",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "PCoIP_TCP4172",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "PCoIP service provisioned by Terraform",
+            "display_name": "PCoIP TCP4172",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 4172 entry",
+                "destination_ports": [
+                  "4172"
+                ],
+                "display_name": "TCP4172",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+            "path": "/infra/services/f4c3ddf7-74bb-4c28-8626-7a53aa69edfe",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "PCoIP_UDP4172",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "PCoIP service provisioned by Terraform",
+            "display_name": "PCoIP UDP4172",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "UDP port 4172 entry",
+                "destination_ports": [
+                  "4172"
+                ],
+                "display_name": "UDP4172",
+                "protocol": "UDP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+            "path": "/infra/services/ddbf8ce1-cb7a-4224-96e5-9d61f158ea43",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "RDP_TCP3389",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "RDP service provisioned by Terraform",
+            "display_name": "RDP TCP3389",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "82c557a8-c3f4-4019-80f9-13c20f92e643",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 8443 entry",
+                "destination_ports": [
+                  "3389"
+                ],
+                "display_name": "TCP3389",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "82c557a8-c3f4-4019-80f9-13c20f92e643",
+            "path": "/infra/services/82c557a8-c3f4-4019-80f9-13c20f92e643",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "TCP11002",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "service provisioned by Terraform",
+            "display_name": "TCP11002",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "80f3142a-396c-48b9-9f11-aebea58cedb0",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 11002 entry",
+                "destination_ports": [
+                  "11002"
+                ],
+                "display_name": "TCP11002",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "80f3142a-396c-48b9-9f11-aebea58cedb0",
+            "path": "/infra/services/80f3142a-396c-48b9-9f11-aebea58cedb0",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "USB_TCP32111",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "USB service provisioned by Terraform",
+            "display_name": "USB TCP3389",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "402412ac-1462-42d7-a569-bf1bd54a12c5",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 32111 entry",
+                "destination_ports": [
+                  "32111"
+                ],
+                "display_name": "TCP32111",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "402412ac-1462-42d7-a569-bf1bd54a12c5",
+            "path": "/infra/services/402412ac-1462-42d7-a569-bf1bd54a12c5",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "VIPA_TCP8472",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "VIPA service provisioned by Terraform",
+            "display_name": "VIPA_TCP8472",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "54d6b9a2-5e41-455c-ab9b-351180f7ffc4",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 8472 entry",
+                "destination_ports": [
+                  "8472"
+                ],
+                "display_name": "TCP8472",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "54d6b9a2-5e41-455c-ab9b-351180f7ffc4",
+            "path": "/infra/services/54d6b9a2-5e41-455c-ab9b-351180f7ffc4",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "ldap_TCP389",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "ldap service provisioned by Terraform",
+            "display_name": "ldap_TCP389",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "856de9ae-6f2e-4c9e-8aad-23708a0d9d58",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 389 entry",
+                "destination_ports": [
+                  "389"
+                ],
+                "display_name": "TCP389",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "856de9ae-6f2e-4c9e-8aad-23708a0d9d58",
+            "path": "/infra/services/856de9ae-6f2e-4c9e-8aad-23708a0d9d58",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "vROPS_TCP3091",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "vROPS service provisioned by Terraform",
+            "display_name": "vROPS_TCP3091",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "9b4f38fb-3bba-4283-85b7-93413473a367",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 3091 entry",
+                "destination_ports": [
+                  "3091"
+                ],
+                "display_name": "TCP3091",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "9b4f38fb-3bba-4283-85b7-93413473a367",
+            "path": "/infra/services/9b4f38fb-3bba-4283-85b7-93413473a367",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "vROPS_TCP3099",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "vROPS service provisioned by Terraform",
+            "display_name": "vROPS_TCP3099",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "e3860b1c-ff9f-4d07-adf4-6e73740ce0e6",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 3099 entry",
+                "destination_ports": [
+                  "3099"
+                ],
+                "display_name": "TCP3099",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "e3860b1c-ff9f-4d07-adf4-6e73740ce0e6",
+            "path": "/infra/services/e3860b1c-ff9f-4d07-adf4-6e73740ce0e6",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "vROPS_TCP3100",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "vROPS service provisioned by Terraform",
+            "display_name": "vROPS_TCP3100",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "debf3f24-26bd-4f70-b243-963f15af06c0",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 3100 entry",
+                "destination_ports": [
+                  "3100"
+                ],
+                "display_name": "TCP3100",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "debf3f24-26bd-4f70-b243-963f15af06c0",
+            "path": "/infra/services/debf3f24-26bd-4f70-b243-963f15af06c0",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "nsxt_policy_service",
+      "name": "vROPS_TCP3101",
+      "provider": "provider.nsxt",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "algorithm_entry": [],
+            "description": "vROPS service provisioned by Terraform",
+            "display_name": "vROPS_TCP3101",
+            "ether_type_entry": [],
+            "icmp_entry": [],
+            "id": "310afc9b-d06d-46b5-8902-5de3315bfefa",
+            "igmp_entry": [],
+            "ip_protocol_entry": [],
+            "l4_port_set_entry": [
+              {
+                "description": "TCP port 3101 entry",
+                "destination_ports": [
+                  "3101"
+                ],
+                "display_name": "TCP3101",
+                "protocol": "TCP",
+                "source_ports": []
+              }
+            ],
+            "nsx_id": "310afc9b-d06d-46b5-8902-5de3315bfefa",
+            "path": "/infra/services/310afc9b-d06d-46b5-8902-5de3315bfefa",
+            "revision": 0,
+            "tag": []
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ]
+}

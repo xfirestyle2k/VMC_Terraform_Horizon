@@ -1,2 +1,5 @@
 terraform.tfvars
 terraform.tfvars1
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/plugins/darwin_amd64/lock.json
