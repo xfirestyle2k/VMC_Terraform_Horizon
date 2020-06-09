@@ -1,14 +1,9 @@
 # Terraform automated whitelist firewall ruleset for Horizon with VMC on AWS
 
-This is the repository for the automated Horizon Whitelist Firewall Ruleset, which can be used with
-Terraform.
+In this repository I created a automated Horizon Whitelist Firewall Ruleset, which can be used with
+Terraform and VMC on AWS.
 
 In this script I using VMC on AWS and the Terraform Provider for NSX-T.
-
-# About Rules
-
-This Terraform script only apply Horizon related connections! Ports and Rules for DNS, NTP, Syslog etc. are missing.
-This script should only support you to build a whitelist Firewall Horizon Plattform.
 
 # Terraform NSX-T Provider
 The newest version from Terraform NSX-T Provider can always be found here: https://github.com/terraform-providers/terraform-provider-nsxt/
@@ -25,6 +20,13 @@ To get familiar with VMC and VMC NSX-T I highly recommend to take a look on the 
 https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/
 
 Everything I did, I learned from him :)! @Nico Thank you! You are awesome!
+
+# About the main.tf
+
+This Terraform script only apply Horizon related Services, groups and Distributed Firewall Sections and Rules. Ports and Rules for DNS, NTP, Syslog etc. are missing.
+This script should support you to build a whitelist Firewall Horizon Plattform or get a idea how you can secure your Horizon Environment.
+
+I will keep on working on this script!
 
 # Support
 

@@ -124,7 +124,7 @@ resource "nsxt_policy_service" "Blast_TCP443" {
   }
 }
 
-// creating Services TCP 443:
+// creating Services TCP 9427:
 resource "nsxt_policy_service" "CDR_MMR_TCP9427" {
   description  = "CDR/MMR service provisioned by Terraform"
   display_name = "CDR/MMR TCP9427"
@@ -389,7 +389,7 @@ resource "nsxt_policy_group" "Workspace1_Access" {
   domain       = "cgw"
 }
 
-// creating Group for Workspace1_Access:
+// creating Group for Horizon Cloud Connector:
 resource "nsxt_policy_group" "Horizon_Cloud_Connector" {
   display_name = "Horizon_Cloud_Connector"
   description  = "Created from Terraform Horizon_Cloud_Connector"
@@ -410,7 +410,7 @@ resource "nsxt_policy_group" "ESXi" {
   domain       = "cgw"
 }
 
-// creating Group for ESXi:
+// creating Group for Enrollment_Server:
 resource "nsxt_policy_group" "Enrollment_Server" {
   display_name = "Enrollment_Server"
   description  = "Created from Terraform Enrollment_Server"
