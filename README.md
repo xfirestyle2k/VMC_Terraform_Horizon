@@ -6,7 +6,7 @@ In this repository I created a automated Horizon Whitelist Firewall Ruleset, whi
 Terraform and VMC on AWS.
 
 To get familiar with VMC and VMC NSX-T I highly recommend to take a look on the Blog posts from Nicolas Vibert:
-https://nicovibert.com/2020/02/04/terraform-provider-for-nsx-t-policy-and-vmware-cloud-on-aws/
+https://nicovibert.com
 
 Everything I did, I learned from him :)! @Nico Thank you! You are awesome!
 
