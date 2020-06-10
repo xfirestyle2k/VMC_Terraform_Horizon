@@ -1,5 +1,7 @@
 # Terraform automated whitelist firewall ruleset for Horizon with VMC on AWS
 
+Explanation can be found here: https://securefever.com/blog/terraform-blueprint-for-a-horizon7-ruleset-with-vmc-on-aws
+
 In this repository I created a automated Horizon Whitelist Firewall Ruleset, which can be used with
 Terraform and VMC on AWS.
 
