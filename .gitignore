@@ -17,3 +17,4 @@ main.go
 NOTICE.txt
 terraform.tfstate
 terraform.tfstate.backup
+.terraform
