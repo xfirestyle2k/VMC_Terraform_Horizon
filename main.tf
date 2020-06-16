@@ -828,7 +828,7 @@ resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
   description  = "Terraform Horizon_Cloud_Connector Ruleset"
   category     = "Environment"
   rule {
-    display_name       = "AppVol_ESXi_Outbound"
+    display_name       = "AppVol_ConnectionServer_Outbound"
     source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
     action             = "ALLOW"
@@ -836,8 +836,8 @@ resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
     logged             = true
   }
   rule {
-    display_name       = "AppVol_ESXi_Outbound"
-    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
+    display_name       = "AppVol_Clients_Outbound"
+    source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
     destination_groups = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     destinations_excluded = true
     action             = "ALLOW"
