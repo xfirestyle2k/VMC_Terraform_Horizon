@@ -396,20 +396,6 @@ resource "nsxt_policy_group" "Horizon_Cloud_Connector" {
   domain       = "cgw"
 }
 
-// creating Group for vCenter:
-resource "nsxt_policy_group" "vCenter" {
-  display_name = "vCenter"
-  description  = "Created from Terraform vCenter"
-  domain       = "cgw"
-}
-
-// creating Group for ESXi:
-resource "nsxt_policy_group" "ESXi" {
-  display_name = "ESXi"
-  description  = "Created from Terraform ESXi"
-  domain       = "cgw"
-}
-
 // creating Group for Enrollment_Server:
 resource "nsxt_policy_group" "Enrollment_Server" {
   display_name = "Enrollment_Server"
@@ -424,6 +410,19 @@ resource "nsxt_policy_group" "JMP_Server" {
   domain       = "cgw"
 }
 
+// creating Group for Horizon_all:
+resource "nsxt_policy_group" "Horizon_all" {
+  display_name = "RFC_1918"
+  description  = "Created from Terraform Horizon_all"
+  domain       = "cgw"
+
+    criteria {
+      path_expression {
+        member_paths = ["${nsxt_policy_group.UAG_external.path}", "${nsxt_policy_group.Admin_VMs.path}", "${nsxt_policy_group.UAG_internal.path}", "${nsxt_policy_group.ConnectionServer.path}", "${nsxt_policy_group.VDI_Clients.path}", "${nsxt_policy_group.Event_Database.path}", "${nsxt_policy_group.Horizon_Cloud_Connector.path}", "${nsxt_policy_group.Workspace1_Access.path}", "${nsxt_policy_group.vROPS.path}", "${nsxt_policy_group.Enrollment_Server.path}", "${nsxt_policy_group.Workspace1_Access.path}", "${nsxt_policy_group.AppVol_MGMT.path}", "${nsxt_policy_group.JMP_Server.path}"]
+    }
+  }
+}
+
 // creating Group for RFC_1918:
 resource "nsxt_policy_group" "RFC_1918" {
   display_name = "RFC_1918"
@@ -435,6 +434,21 @@ resource "nsxt_policy_group" "RFC_1918" {
       ip_addresses = ["192.168.0.0/16", "172.16.0.0/16", "10.0.0.0/8"]
     }
   }
+}
+###################### creating non Horizon Groups ######################
+
+// creating Group for DNS_Server:
+resource "nsxt_policy_group" "DNS_Server" {
+  display_name = "DNS_Server"
+  description  = "Created from Terraform DNS_Server"
+  domain       = "cgw"
+}
+
+// creating Group for AD_Server:
+resource "nsxt_policy_group" "AD_Server" {
+  display_name = "AD_Server"
+  description  = "Created from Terraform AD_Server"
+  domain       = "cgw"
 }
 
 ###################### creating DFW Security Rules ######################
@@ -567,7 +581,7 @@ resource "nsxt_policy_security_policy" "Horizon_Connection_Server" {
   rule {
     display_name       = "Horizon_Connection_Server_vCenter_Outbound"
     source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
-    destination_groups = ["${nsxt_policy_group.vCenter.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/VCENTER"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -819,7 +833,7 @@ resource "nsxt_policy_security_policy" "AppVolumes" {
   rule {
     display_name       = "AppVol_vCenter_Outbound"
     source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
-    destination_groups = ["${nsxt_policy_group.vCenter.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/VCENTER"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -827,7 +841,7 @@ resource "nsxt_policy_security_policy" "AppVolumes" {
   rule {
     display_name       = "AppVol_ESXi_Outbound"
     source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
-    destination_groups = ["${nsxt_policy_group.ESXi.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/ESXI"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -842,7 +856,7 @@ resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
   description  = "Terraform Horizon_Cloud_Connector Ruleset"
   category     = "Environment"
   rule {
-    display_name       = "AppVol_ESXi_Outbound"
+    display_name       = "AppVol_ConnectionServer_Outbound"
     source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     destination_groups = ["${nsxt_policy_group.ConnectionServer.path}"]
     action             = "ALLOW"
@@ -850,12 +864,59 @@ resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
     logged             = true
   }
   rule {
-    display_name       = "AppVol_ESXi_Outbound"
-    source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
-    destination_groups = ["${nsxt_policy_group.RFC_1918.path}"]
+    display_name       = "AppVol_Clients_Outbound"
+    source_groups      = ["${nsxt_policy_group.VDI_Clients.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     destinations_excluded = true
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
+    logged             = true
+  }
+}
+
+###################### creating non-Horizon Rules ######################
+
+###################### creating DNS Rules ######################
+
+
+resource "nsxt_policy_security_policy" "Horizon_DNS" {
+  domain       = "cgw"
+  display_name = "Horizon_DNS"
+  description  = "Terraform DNS Ruleset"
+  category     = "Infrastructure"
+
+  rule {
+    display_name       = "Horizon_all_DNS_Outbound"
+    source_groups      = ["${nsxt_policy_group.Horizon_all.path}"]
+    destination_groups = ["${nsxt_policy_group.DNS_Server.path}"]
+    action             = "ALLOW"
+    services           = ["/infra/services/DNS"]
+    logged             = true
+  }
+}
+
+###################### creating DNS Rules ######################
+
+resource "nsxt_policy_security_policy" "LDAP_SSL" {
+  domain       = "cgw"
+  display_name = "Horizon_DNS"
+  description  = "Terraform DNS Ruleset"
+  category     = "Infrastructure"
+
+  rule {
+    display_name       = "Horizon_all_DNS_Outbound"
+    source_groups      = ["${nsxt_policy_group.Horizon_all.path}"]
+    destination_groups = ["${nsxt_policy_group.AD_Server.path}"]
+    action             = "ALLOW"
+    services           = ["/infra/services/LDAP-over-SSL"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_all_DNS_Inbound"
+    source_groups      = ["${nsxt_policy_group.AD_Server.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_all.path}"]
+    action             = "ALLOW"
+    services           = ["/infra/services/LDAP-over-SSL"]
     logged             = true
   }
 }
