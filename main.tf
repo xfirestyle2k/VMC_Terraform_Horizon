@@ -396,20 +396,6 @@ resource "nsxt_policy_group" "Horizon_Cloud_Connector" {
   domain       = "cgw"
 }
 
-// creating Group for vCenter:
-resource "nsxt_policy_group" "vCenter" {
-  display_name = "vCenter"
-  description  = "Created from Terraform vCenter"
-  domain       = "cgw"
-}
-
-// creating Group for ESXi:
-resource "nsxt_policy_group" "ESXi" {
-  display_name = "ESXi"
-  description  = "Created from Terraform ESXi"
-  domain       = "cgw"
-}
-
 // creating Group for Enrollment_Server:
 resource "nsxt_policy_group" "Enrollment_Server" {
   display_name = "Enrollment_Server"
@@ -567,7 +553,7 @@ resource "nsxt_policy_security_policy" "Horizon_Connection_Server" {
   rule {
     display_name       = "Horizon_Connection_Server_vCenter_Outbound"
     source_groups      = ["${nsxt_policy_group.ConnectionServer.path}"]
-    destination_groups = ["${nsxt_policy_group.vCenter.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/VCENTER"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -819,7 +805,7 @@ resource "nsxt_policy_security_policy" "AppVolumes" {
   rule {
     display_name       = "AppVol_vCenter_Outbound"
     source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
-    destination_groups = ["${nsxt_policy_group.vCenter.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/VCENTER"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -827,7 +813,7 @@ resource "nsxt_policy_security_policy" "AppVolumes" {
   rule {
     display_name       = "AppVol_ESXi_Outbound"
     source_groups      = ["${nsxt_policy_group.AppVol_MGMT.path}"]
-    destination_groups = ["${nsxt_policy_group.ESXi.path}"]
+    destination_groups = ["/infra/domains/mgw/groups/ESXI"]
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
     logged             = true
@@ -851,8 +837,8 @@ resource "nsxt_policy_security_policy" "Horizon_Cloud_Connector" {
   }
   rule {
     display_name       = "AppVol_ESXi_Outbound"
-    source_groups      = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
-    destination_groups = ["${nsxt_policy_group.RFC_1918.path}"]
+    source_groups      = ["${nsxt_policy_group.RFC_1918.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_Cloud_Connector.path}"]
     destinations_excluded = true
     action             = "ALLOW"
     services           = ["${nsxt_policy_service.Blast_TCP443.path}"]
