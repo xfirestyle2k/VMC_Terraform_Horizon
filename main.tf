@@ -451,6 +451,13 @@ resource "nsxt_policy_group" "AD_Server" {
   domain       = "cgw"
 }
 
+// creating Group for NTP_Server:
+resource "nsxt_policy_group" "NTP_Server" {
+  display_name = "NTP_Server"
+  description  = "Created from Terraform NTP_Server"
+  domain       = "cgw"
+}
+
 ###################### creating DFW Security Rules ######################
 
 ###################### creating Ruleset for Unified Access Gateway external ######################
@@ -886,9 +893,17 @@ resource "nsxt_policy_security_policy" "Horizon_DNS" {
   category     = "Infrastructure"
 
   rule {
-    display_name       = "Horizon_all_DNS_Outbound"
+    display_name       = "Horizon_all_DNS_Inbound"
     source_groups      = ["${nsxt_policy_group.Horizon_all.path}"]
     destination_groups = ["${nsxt_policy_group.DNS_Server.path}"]
+    action             = "ALLOW"
+    services           = ["/infra/services/DNS"]
+    logged             = true
+  }
+  rule {
+    display_name       = "Horizon_all_DNS_Outbound"
+    source_groups      = ["${nsxt_policy_group.DNS_Server.path}"]
+    destination_groups = ["${nsxt_policy_group.Horizon_all.path}"]
     action             = "ALLOW"
     services           = ["/infra/services/DNS"]
     logged             = true
@@ -899,8 +914,8 @@ resource "nsxt_policy_security_policy" "Horizon_DNS" {
 
 resource "nsxt_policy_security_policy" "LDAP_SSL" {
   domain       = "cgw"
-  display_name = "Horizon_DNS"
-  description  = "Terraform DNS Ruleset"
+  display_name = "Horizon_LDAPS"
+  description  = "Terraform LDAPS Ruleset"
   category     = "Infrastructure"
 
   rule {
@@ -917,6 +932,24 @@ resource "nsxt_policy_security_policy" "LDAP_SSL" {
     destination_groups = ["${nsxt_policy_group.Horizon_all.path}"]
     action             = "ALLOW"
     services           = ["/infra/services/LDAP-over-SSL"]
+    logged             = true
+  }
+}
+
+###################### creating NTP Rule ######################
+
+resource "nsxt_policy_security_policy" "NTP" {
+  domain       = "cgw"
+  display_name = "Horizon_NTP"
+  description  = "Terraform NTP Ruleset"
+  category     = "Infrastructure"
+
+  rule {
+    display_name       = "Horizon_all_LDAPS_Outbound"
+    source_groups      = ["${nsxt_policy_group.Horizon_all.path}"]
+    destination_groups = ["${nsxt_policy_group.NTP_Server.path}"]
+    action             = "ALLOW"
+    services           = ["/infra/services/NTP"]
     logged             = true
   }
 }
