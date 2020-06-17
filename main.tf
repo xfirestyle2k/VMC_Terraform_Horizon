@@ -895,7 +895,7 @@ resource "nsxt_policy_security_policy" "Horizon_DNS" {
   }
 }
 
-###################### creating DNS Rules ######################
+###################### creating LDAP_over_SSL Rules ######################
 
 resource "nsxt_policy_security_policy" "LDAP_SSL" {
   domain       = "cgw"
@@ -904,7 +904,7 @@ resource "nsxt_policy_security_policy" "LDAP_SSL" {
   category     = "Infrastructure"
 
   rule {
-    display_name       = "Horizon_all_DNS_Outbound"
+    display_name       = "Horizon_all_LDAPS_Outbound"
     source_groups      = ["${nsxt_policy_group.Horizon_all.path}"]
     destination_groups = ["${nsxt_policy_group.AD_Server.path}"]
     action             = "ALLOW"
@@ -912,7 +912,7 @@ resource "nsxt_policy_security_policy" "LDAP_SSL" {
     logged             = true
   }
   rule {
-    display_name       = "Horizon_all_DNS_Inbound"
+    display_name       = "Horizon_all_LDAPS_Inbound"
     source_groups      = ["${nsxt_policy_group.AD_Server.path}"]
     destination_groups = ["${nsxt_policy_group.Horizon_all.path}"]
     action             = "ALLOW"
