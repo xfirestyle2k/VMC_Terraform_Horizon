@@ -327,6 +327,13 @@ resource "nsxt_policy_group" "UAG_external" {
   domain       = "cgw"
 }
 
+// creating Group for MarcelServer:
+resource "nsxt_policy_group" "MarcelServer" {
+  display_name = "MarcelServer"
+  description  = "Created from Terraform MarcelServer"
+  domain       = "cgw"
+}
+
 // creating Group for UAG_internal:
 resource "nsxt_policy_group" "UAG_internal" {
   display_name = "UAG_internal"
