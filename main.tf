@@ -5,6 +5,22 @@ provider "nsxt" {
   enforcement_point    = "vmc-enforcementpoint"
 }
 
+###################### COPYRIGHT ######################
+/*
+a. COPYRIGHT NOTICE
+
+-The copyright notice should be formatted as follows:
+“Copyright Year(s) program was created by VMware.”
+If the code, for example, was created in 2006 and you made revisions to it in 2020, the copyright notice should read:
+“Copyright 2006-2020 VMware, Inc.”
+
+b. COPYING PERMISSION STATEMENT
+
+- The copying permission statement should be added immediately following the VMware copyright notice in EACH source file and is formatted as follows:
+SPDX-License-Identifier: ***
+For each open source license, replace the *** with the SPDX License Identifier, which can be found at https://spdx.org/licenses
+*/
+
 ###################### creating all Services ######################
 
 // creating Services TCP 8443:
