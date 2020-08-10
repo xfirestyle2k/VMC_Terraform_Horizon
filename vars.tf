@@ -4,6 +4,3 @@ variable "host" {
 variable "vmc_token" {
     description = "VMC Token"
 }
-variable "org-id" {
-    description = "Org ID"
-}
