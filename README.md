@@ -1,3 +1,8 @@
+#Please follow https://github.com/vmware-labs/blueprint-for-horizon-with-vmc-on-aws/tree/master
+
+#This Repository is archived and moved to the VMware-labs org!
+ I will continue to work on this project in the VMware-labs org!
+
 # blueprint-for-horizon-with-vmc-on-aws
 
 # Overview
